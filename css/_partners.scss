@@ -1,0 +1,134 @@
+.partners {
+  padding: 2rem 1.8rem;
+  background: linear-gradient(152.20deg, rgb(112, 97, 170) -27.618%, rgb(52, 14, 115) 78.015%);
+  border-radius: 41px;
+
+  .benefits__title--box p {
+    width: 68rem;
+    font-size: 4rem;
+    font-weight: 400;
+    line-height: 100%;
+    opacity: 0.7;
+  }
+
+  h2 {
+    font-weight: 500;
+    font-size: 9rem;
+  }
+}
+
+.partners__content--row {
+  padding: 14rem 0 10rem;
+}
+
+.partners__content--grid {
+  display: grid;
+  grid: 1fr / 1fr 1fr 1fr 1fr;
+  gap: 33px;
+}
+
+.partners__content--item {
+  border: 1px solid rgb(180, 150, 238);;
+  padding: 8rem 9rem;
+  border-radius: 40px;
+  position: relative;
+  @include center;
+
+  &:after {
+    content: "example";
+    position: absolute;
+    font-weight: 400;
+    line-height: 125%;
+    opacity: 0.7;
+    top: calc(100% + 15px);
+    left: 0;
+  }
+}
+
+@include tablet {
+  .partners {
+    border-radius: 30px;
+
+    .benefits__title--box {
+      flex-direction: column;
+    }
+
+    p {
+      margin: 2.5rem 0;
+    }
+  }
+
+  .partners__content--row {
+    padding: 0rem 0 10rem;
+  }
+
+  .partners__content--item {
+    padding: 4rem 0rem;
+    border-radius: 20px;
+  }
+
+  .partners__content--grid {
+    display: grid;
+    grid: 1fr 1fr /1fr 1fr;
+    gap: 19px;
+  }
+
+  .partners__content--item {
+    border: 1px solid rgb(180, 150, 238);;
+    padding: 8rem 9rem;
+    border-radius: 40px;
+    position: relative;
+    @include center;
+
+    &:after {
+      content: "";
+
+    }
+  }
+}
+
+@include mini-tablet {
+  .benefits__title--box {
+
+    p {
+      display: block;
+    }
+  }
+
+  .partners .benefits__title--box p {
+    width: 68rem;
+    font-size: 4rem;
+    font-weight: 300;
+    line-height: 100%;
+    opacity: 0.7;
+  }
+}
+
+.benefits__underline--mobile {
+  display: none;
+}
+
+@include mobile {
+  .partners {
+    .benefits__underline {
+      display: none;
+    }
+
+    .benefits__title--box {
+      padding: 0px 21px;
+    }
+
+    .benefits__underline--mobile {
+      display: block;
+      width: 100%;
+    }
+
+    .benefits__title--box {
+      margin: -3rem 0px 0rem;
+
+      p {
+        display: block;
+      }
+    }
+  }
+}

@@ -1,0 +1,157 @@
+.hero__section {
+  position: relative;
+  z-index: 1;
+}
+
+.header__row {
+  position: relative;
+
+  &:before {
+    content: url('../resources/pictures/hero/Ellipse 23.svg');
+    top: -290px;
+    right: 0;
+    position: absolute;
+
+  }
+}
+
+.header__mobile {
+  background: #000000 url('../resources/pictures/hero/Ellipse 23.png') no-repeat center/cover;
+}
+
+.first_video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  object-fit: cover;
+}
+
+
+.main__header {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  height: 100vh;
+  padding: 11.5rem 0 6.3rem 0;
+
+}
+
+.header__title {
+  color: #FFF;
+  font-size: 12.4rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 95%; /* 97.09px */
+  letter-spacing: -2.044px;
+  max-width: 91rem;
+
+
+}
+
+.header__description {
+  width: 35rem;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 113%; /* 33.9px */
+  letter-spacing: -1.2px;
+}
+
+.header__sponsors--row {
+  margin: 2.8rem 0 5.6rem 0;
+  max-width: 95vw;
+  //flex-wrap: wrap;
+  //@include between;
+  display: grid;
+  grid-template: auto / repeat(6, auto);
+  grid-auto-flow: row dense;
+  justify-items: center;
+  gap: 15px;
+  align-items: center;
+}
+
+@include tablet {
+  .header__sponsors--row {
+    grid-template: auto auto / repeat(5, auto);
+  }
+  .sponsor__btn {
+    width: 23rem;
+  }
+
+
+  .header__title {
+    font-size: 10rem;
+  }
+
+  .header__button {
+    margin: 1.7rem 0 4.5rem 0;
+  }
+}
+
+@include mini-tablet {
+  .header__sponsors--row {
+    grid-template: auto auto / repeat(4, auto);
+  }
+
+  .sponsor__btn {
+    width: 21rem;
+}
+}
+
+@include mobile {
+  .sponsor__btn {
+    width: 38rem;
+  }
+  .header__sponsors--row {
+    grid-template: auto auto auto / repeat(2, auto);
+  }
+
+  .header__bg-decorate {
+    &:before {
+      content: url("../resources/pictures/hero/Ellipse 23.png");
+      right: -86px;
+      bottom: -302px;
+      position: absolute;
+    }
+  }
+  .hero__title {
+    font-size: 12rem;
+
+  }
+
+  .first_video {
+    top: 20px;
+    width: 106vw;
+    height: 37vh;
+  }
+
+  .navigation__panel {
+    background-color: black;
+  }
+
+  .header__button {
+    width: 100%;
+    margin: 3.5rem 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .header__title {
+    max-width: 63rem;
+  }
+}
+
+@include mini-mobile {
+  .hero__title {
+    display: none;
+  }
+
+  .sponsor__btn {
+    width: 27rem;
+  }
+}

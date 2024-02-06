@@ -1,0 +1,190 @@
+.properties {
+  padding: 7rem 0;
+  margin-top: -39px;
+    background-color: black;
+    border-radius: 7%;
+
+  svg {
+    width: 100%;
+  }
+}
+
+.properties__container {
+  padding: 0 3rem;
+}
+
+.properties__slider--panel {
+  @include between;
+  padding: 0 2rem;
+
+}
+
+.properties__title {
+  width: 90rem;
+  font-size: 9rem;
+  font-weight: 300;
+}
+
+.properties__btn--box {
+  align-self: end;
+}
+
+.properties__card--item {
+  padding: 5rem 4rem;
+  @include center;
+  
+  align-items: flex-start;
+  flex-direction: column;
+  max-width: 34rem;
+  height: 45rem;
+  border-radius: 20px;
+  border: 1px solid var(--402-e-5-c, #402E5C);
+
+  svg {
+    width: 11rem;
+  }
+
+  h3 {
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 93%; /* 31.62px */
+    letter-spacing: -1.36px;
+  }
+
+  p {
+    margin-top: 13rem;
+    width: 19rem;
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 125%; /* 20px */
+    letter-spacing: -0.64px;
+  }
+}
+
+.properties__slider--wrapper {
+  margin: 7rem 8vw;
+}
+
+.properties__slider {
+  @include center;
+  justify-content: left;
+  gap: 15px;
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  & {
+    -ms-overflow-style: none; /* IE и Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+.properties__slider--scrollbar {
+  margin-top: 5rem;
+  height: 20px;
+  width: 100%;
+  @include center;
+
+  &:hover {
+
+    .properties__slider--stick::after {
+      @include transition-preset-in;
+      background-color: #5F29B7;
+    }
+
+    .properties__slider--road {
+      @include transition-preset-in;
+      height: 2px;
+    }
+  }
+}
+
+.properties__slider--road {
+  display: block;
+  background-color: #ffffff52;
+  height: 1px;
+  width: 100%;
+  position: relative;
+  @include transition-preset-out;
+}
+
+.properties__slider--stick {
+  position: absolute;
+  height: 1px;
+  width: 45%;
+  background-color: #402E5C;
+  border-radius: 4px;
+  cursor: grab;
+
+  &::after {
+    content: "";
+    left: 0;
+    right: 0;
+    top: -1px;
+    bottom: -2px;
+    position: absolute;
+    border-radius: 5px;
+    @include transition-preset-out;
+  }
+
+  &:active::after {
+    cursor: grabbing;
+    top: -2px;
+    bottom: -2px;
+    background-color: #7952FF;
+  }
+
+  &:hover::after {
+
+    background-color: #7952FF;
+  }
+
+}
+
+.properties__btn--box {
+  @include between;
+  width: 24rem;
+}
+
+
+.properties__button {
+  background-color: transparent;
+  @include center;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 100px;
+}
+
+.properties__underline {
+  width: 100%;
+  margin: 0 auto -3.5rem;
+}
+
+.properties__container {
+  //background: #000000 url('../resources/pictures/features/Subtract.png') no-repeat center 60rem /cover;
+}
+
+@include mini-tablet {
+  .properties__btn--box {
+    display: none;
+  }
+
+  .properties {
+    padding: 7rem 0;
+    margin-top: -50px;
+    background-color: black;
+    border-radius: 9rem;
+    z-index: 1;
+    position: relative;
+  }
+
+
+
+
+}
+
+.properties__button--prev {
+  margin-right: 10px;
+}

@@ -1,0 +1,309 @@
+@mixin textSettings($font-family, $font-weight, $font-url) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $font-weight;
+    src: url($font-url) format("woff2");
+    font-style: normal;
+    font-display: swap;
+  }
+}
+
+.main__container {
+  max-width: 95vw;
+  margin: 0 auto;
+}
+
+@include desktop {
+  .main__container {
+    max-width: 70vw;
+  }
+}
+
+@include mobile {
+  .main__container {
+    width: 100%;
+  }
+}
+
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin underScale($color: #fff) {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    background-color: $color;
+    bottom: 0;
+    border-radius: 2px;
+    transition: all 0.2s ease-out;
+  }
+  &:hover::before {
+    width: 100%;
+    transition: all 0.2s ease-out;
+  }
+}
+
+@mixin transition-preset-in {
+  transition: all .3s;
+}
+
+@mixin hidden {
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1;
+}
+
+@mixin visible {
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
+
+@mixin transition-preset-out {
+  transition: all .5s;
+}
+
+html {
+  @include desktop {
+    font-size: calc(100vw / 1920 * 7);
+  }
+
+  font-size: calc(100vw / 1440 * 8);
+
+
+  @include small-desktop {
+    font-size: calc(100vw / 1440 * 8);
+  }
+
+  @include tablet {
+    font-size: calc(100vw / 1024 * 8);
+  }
+
+  @include mini-tablet {
+    font-size: calc(100vw / 768 * 8);
+  }
+
+  @include mobile {
+    font-size: calc(100vw / 576 * 7);
+  }
+
+  @include mini-mobile {
+    font-size: calc(100vw / 420 * 5);
+  }
+}
+
+:root {
+  --parametres: calc(1vw + 1vh);
+  --color: #fff
+
+}
+
+body {
+  font-family: "Nekst";
+  background-color: #000;
+  color: #fff;
+}
+
+.container {
+  padding: 0 2vw;
+}
+
+.mackcombo {
+  display: none;
+}
+
+.button__one {
+  p {
+    padding: 0 8px;
+  }
+
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 150%; /* 24.75px */
+  letter-spacing: -0.75px;
+  @include center;
+  border-radius: 42.656px;
+  transition: all .5s;
+
+
+  svg {
+    margin-left: 0.5rem;
+    transition: all .3s;
+    width: 2.5rem;
+    stroke: white;
+  }
+
+  &:hover {
+    background: #5F29B7;
+    box-shadow: 6px 0 0 6px #8441F1;
+    background-color: #8441F1;
+    transition: all .4s;
+
+    svg {
+      transform: translateX(1rem);
+      transition: all .3s;
+      stroke: white;
+    }
+  }
+}
+
+.btn-6 {
+  @include center;
+  border-radius: 42.656px;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 93%; /* 26.04px */
+  letter-spacing: -0.84px;
+  position: relative;
+  overflow: hidden;
+  width: 36.4rem;
+  height: 9.8rem;
+  text-transform: uppercase;
+  border: 1px solid currentColor;
+  z-index: 0;
+
+  span {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: #5F29B7;
+    transition: width 0.6s ease-in-out, height 0.6s ease-in-out;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+
+  svg {
+    width: 9rem;
+    margin-left: 2.5rem;
+  }
+
+  circle {
+    width: 39px;
+  }
+
+  path, circle {
+    transition: all .8s;
+  }
+
+
+  &:hover {
+    span {
+      width: 225%;
+      height: 562.5px;
+    }
+
+    path, circle {
+      transition: all .6s;
+    }
+
+    path {
+      transform: translateX(6px);
+    }
+
+    circle {
+      opacity: 1;
+      padding-right: 0.5rem;
+    }
+
+  }
+}
+
+.sponsor__btn {
+  @include center;
+  height: 10rem;
+  width: 23.8rem;
+  border-radius: 13px;
+  position: relative;
+  background-color: #0E0915;
+
+
+  &:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-radius: 13px;
+    position: absolute;
+    display: inline-block;
+    background-image: linear-gradient(45deg, #0206ff, #8F00FF, #ee00ff);
+    z-index: -1;
+    background-size: 200%;
+    box-shadow: 0 0 20px 2px #5f29b7d9;
+    transition: width .8s, height .8s;
+    animation: animateborder 1s ease infinite paused;
+  }
+
+  &:hover::before {
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    transition: width .6s, height .6s;
+    animation-play-state: running;
+  }
+
+}
+
+@keyframes animateborder {
+  0% {
+    background-position: 0;
+  }
+  50% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: 0;
+  }
+}
+
+.content {
+  overflow: hidden;
+}
+
+.modal__active {
+  overflow: hidden;
+}
+
+.text__special {
+  background: linear-gradient(251deg, #FFF 13.67%, #5F29B7 124.09%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 95%;
+  letter-spacing: -2.044px;
+}
+
+.header__button {
+  margin: 1.7rem 0 14.5rem 0;
+}
+
+section {
+  padding: 12rem 3rem;
+}
+
+@include mobile {
+  section {
+    padding: 6rem 3rem;
+  }
+}
+
+;
+
+
+

@@ -1,0 +1,318 @@
+.hero__section {
+  height: fit-content;
+  
+}
+
+.logo img {
+  width: calc(var(--parametres) * 7);
+  position: relative;
+  z-index: 11;
+}
+
+.header__menu {
+  .button__one, .language__button--mobile {
+    display: none;
+  }
+
+}
+
+.navigation__panel, .navbar__links--list {
+  @include between;
+}
+
+.navigation__panel {
+  padding: 0 1.5vw;
+  height: 8rem;
+  background: transparent url("../resources/pictures/hero/Rectangle 15.svg") no-repeat center / cover;
+}
+
+.navbar__links--list {
+  li {
+    margin-right: 2.5rem;
+    @include underScale;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.navbar__links--list, .button__one, .language__button {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 150%; /* 24.75px */
+  letter-spacing: -0.75px;
+}
+
+.language__button {
+  font-weight: 100;
+  @include transition-preset-out;
+
+  svg {
+    margin-left: 1rem;
+    width: 1.5rem;
+    stroke: white;
+    @include transition-preset-out;
+  }
+
+  &:hover {
+    color: #904BFF;
+    font-size: 2.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.75px;
+    @include transition-preset-in;
+
+    svg {
+      width: 1.8rem;
+      stroke: #904BFF;
+      @include transition-preset-in;
+
+    }
+  }
+
+  @include center;
+}
+
+.language__button--active {
+  color: #904BFF;
+  font-size: 2.2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 24.75px */
+  letter-spacing: -0.75px;
+
+  svg {
+    width: 1.8rem;
+    stroke: #904BFF;
+    transform: rotateX(180deg);
+    
+  }
+}
+
+.language__button--wrap {
+  width: 6rem;
+  position: relative;
+}
+
+.button__one {
+  margin-right: 1rem;
+}
+
+.button__container {
+  width: 15.8rem;
+}
+
+.language__card {
+  color: white;
+  position: absolute;
+  width: 10rem;
+  height: 15rem;
+  border-radius: 6px;
+  background: #5F29B7;
+  left: -1.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  top: 13px;
+
+  @include hidden;
+  @include transition-preset-out;
+}
+
+.language__card--active {
+  top: 35px;
+  @include visible;
+  @include transition-preset-in;
+}
+
+.language__card--element {
+  text-align: left;
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: 200;
+  line-height: 119%; /* 29.75px */
+  letter-spacing: -0.25px;
+  padding: 1px 37px 1px 3px;
+  @include transition-preset-out;
+
+  &:hover {
+    background-color: #7641CD;
+    border-radius: 4px;
+    @include transition-preset-in;
+  }
+}
+
+@include tablet {
+
+  .navbar__links {
+    height: 75%;
+    @include center;
+  }
+
+  .header__menu {
+    position: absolute;
+    flex-direction: column;
+    padding: 8rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    @include hidden;
+    @include center;
+    @include transition-preset-out;
+  }
+
+  .navbar__links--list {
+    color: white;
+    text-align: center;;
+    font-size: 3.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 169%;
+    letter-spacing: -1.05px;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+    li {
+      margin-right: 0;
+    }
+  }
+
+  .header__burger {
+    display: block;
+  }
+
+  .mackcombo {
+    display: block;
+    height: 30px;
+    width: 30px;
+    z-index: 11;
+    cursor: pointer;
+  }
+
+  .navigation__panel {
+    padding: 0 5.5vw;
+  }
+
+
+}
+
+@include mobile {
+
+  .language__button, .button__one {
+    color: white;
+    text-align: center;;
+    font-size: 3.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 169%;
+    letter-spacing: -1.05px;
+  }
+
+  .button__one {
+    @include center;
+    padding: 1rem 3rem 1rem 2.7rem;
+    border-radius: 27px;
+    border: 1px solid #8A4CEF;
+    width: 100%;
+    text-align: center;
+
+    svg {
+      margin-left: 2.5rem;
+      transition: all 0.3s;
+      width: 5.5rem;
+    }
+
+    &:hover {
+      background: #8A4CEF;
+    }
+  }
+
+  .language__button {
+    border-radius: 40px;
+    border: 1px solid #8A4CEF;
+    padding: 0.5rem 2rem;
+    @include transition-preset-out;
+
+    svg {
+      margin-left: 2rem;
+      width: 3.5rem;
+    }
+
+    &:hover {
+      background-color: #5F29B7;
+      color: white;
+      font-size: 3.5rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 169%;
+      letter-spacing: -1.05px;
+      @include transition-preset-in;
+
+      svg {
+        width: 3.5rem;
+        stroke: white;
+        @include transition-preset-in;
+      }
+    }
+  }
+
+  .language__button--active {
+    background-color: #5F29B7;
+  }
+
+  .language__button--wrap {
+    width: fit-content;
+  }
+
+  .language__card {
+    left: 15px;
+    top: 64px;
+  }
+
+
+  .navbar__links {
+    height: 36rem;
+    margin-top: 7rem;
+  }
+
+  .button__one {
+    margin-right: 0;
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
+
+  .header__menu {
+    justify-content: space-between;
+  }
+
+  .logo img {
+    width: calc(var(--parametres) * 10);
+  }
+
+  .language__button--wrap, .button__one {
+    display: none;
+  }
+
+  .menu__active {
+    .button__one--mobile, .language__wrap--mobile, .language__button--mobile {
+      display: block;
+    }
+  }
+}
+
+.menu__active {
+  @include visible;
+  @include transition-preset-in;
+  z-index: 10;
+  height: 100vh;
+  width: 100vw;
+  background: black url("../resources/pictures/hero/Ellipse 23.png") no-repeat center / cover;
+}

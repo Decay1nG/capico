@@ -1,0 +1,179 @@
+.numbers__img--mobile, .multichart__mobile--underline {
+  display: none;
+}
+
+.multichart__container, .statistics__container {
+  @include between;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+}
+
+.multichart__title--box, .statistics__title--box, .benefits__title--box {
+  width: fit-content;
+  position: relative;
+  @include center;
+  padding: 14px 36px;
+
+  h2 {
+    font-size: 13rem;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 93%;
+    letter-spacing: -5.2px;
+    width: 70rem;
+  }
+
+  .multichart__underline {
+    position: absolute;
+    top: -20px;
+    width: 100%;
+    right: 0;
+    left: 0;
+  }
+
+}
+
+.multichart__text, .statistics__text {
+  span {
+    color: #fff;
+    font-weight: 400;
+  }
+
+  margin-top: 10rem;
+  color: var(--7-b-708-d, #7B708D);
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 200;
+  line-height: 108%;
+  letter-spacing: -1.6px;
+  max-width: 60rem;
+  height: 18rem;
+}
+
+.statistics__text {
+  color: #fff;
+  position: relative;
+  width: 40rem;
+
+  &:after {
+    content: "Visual statistics of trade. Uploading reports";
+    display: block;
+    width: 60%;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 103%;
+    letter-spacing: -0.54px;
+    right: -26rem;
+    color: var(--7-b-708-d, #7B708D);
+    top: 11px;
+    position: absolute;
+  }
+
+}
+
+.statistics {
+  background: #000000 url('../resources/pictures/features/gra.png') no-repeat center 70rem /cover;
+  padding: 15rem 2rem 25rem;
+  
+}
+
+@include tablet {
+  .statistics__title--box {
+    padding: 14px 15px;
+  }
+  
+  .statistics {
+    background: #000000 url(../resources/pictures/features/gra.png) no-repeat center 79rem/cover;
+  }
+}
+
+
+@include mini-tablet {
+  .statistics {
+    background: #000000 url(../resources/pictures/features/gra.png) no-repeat center 100rem/cover;
+  }
+
+  .statistics, .multichart {
+    position: relative;
+
+  }
+
+  .multichart__title--box, .statistics__title--box, .benefits__title--box {
+    position: static;
+
+    h2 {
+      font-size: 10rem;
+      text-align: left;
+      letter-spacing: -2.2px;
+    }
+
+  }
+  .multichart__text, .statistics__text {
+    margin-top: 10px;
+    font-size: 3.5rem;
+    letter-spacing: -0.72px;
+  }
+
+  .numbers__img--mobile {
+    display: block;
+  }
+  .numbers__img--pc {
+    display: none;
+  }
+
+
+  section {
+    padding: 10rem 1rem;
+  }
+  .multichart__container, .statistics__container {
+    flex-direction: column;
+  }
+}
+
+.multyichart__title {
+  width: 70rem;
+}
+
+@include mobile {
+
+  .statistics__text:after {
+    width: 60%;
+    right: -30rem;
+}
+  
+  .multichart__mobile--underline {
+    width: 90vw;
+    height: 1px;
+    margin: 0 auto;
+    background-color: #775DA8;
+    margin-bottom: 80px;
+  }
+
+  .multichart__underline {
+    display: none;
+  }
+  
+  .statistics {
+    background: #000000 url(../resources/pictures/features/gra.png) no-repeat center 85rem/cover;
+    padding: 6rem 0rem 20rem;
+  }
+
+  .multichart__title--box, .statistics__title--box {
+    align-self: flex-start;
+  }
+
+  .multichart__container, .statistics__container {
+    padding: 0 0;
+  }
+}
+
+@media (min-width: 2100px) {
+  .multichart__underline {
+    display: none;
+  }
+}
